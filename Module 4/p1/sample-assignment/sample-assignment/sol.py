@@ -5,6 +5,7 @@
 # This function takes in one number and returns one number.
 
 def main():
+	'''program to sum two numbers'''
     data = input().split(",")
     print(int(data[0])+int(data[1]))
 
