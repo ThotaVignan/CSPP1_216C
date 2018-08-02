@@ -6,8 +6,8 @@
 
 def main():
 
-	'''program to sum two numbers'''
-	data = input().split(",")
+    '''program to sum two numbers'''
+    data = input().split(",")
     print(int(data[0])+int(data[1]))
 
 if __name__ == "__main__":
