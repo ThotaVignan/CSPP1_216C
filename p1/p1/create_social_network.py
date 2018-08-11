@@ -33,17 +33,18 @@ def create_social_network(data):
     '''
 
     # remove the pass below and start writing your code
-
-    f_list = data.splitlines()
-    frd_l = []
-    for i in f_list:
-        k = i.split(" follows ")
-        # z= k[0].split(",")
-        frd_l.append(k)
-    frd_dict = {}
-    for i in range(len(frd_l)):
-        frd_dict[frd_l[i][0]] = frd_l[i][1].split(",")
-    return frd_dict
+    if "follows" in data:
+        f_list = data.splitlines()
+        frd_l = []
+        for i in f_list:
+            k = i.split(" follows ")
+            # z= k[0].split(",")
+            frd_l.append(k)
+        frd_dict = {}
+        for i in range(len(frd_l)):
+            frd_dict[frd_l[i][0]] = frd_l[i][1].split(",")
+        return frd_dict
+    return {}
 def main():
     '''
         handling testcase input and printing output
