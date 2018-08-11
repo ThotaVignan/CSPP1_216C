@@ -54,7 +54,6 @@ def main():
         i += 1
         string += input()
         string += '\n'
-    print(string)
     print(create_social_network(string))
 
 if __name__ == "__main__":
