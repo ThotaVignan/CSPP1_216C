@@ -36,6 +36,7 @@ def create_social_network(data):
     if "follows" in data:
         f_list = data.splitlines()
         frd_l = []
+        print(f_list)
         for i in f_list:
             k = i.split(" follows ")
             # z= k[0].split(",")
