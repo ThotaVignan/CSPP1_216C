@@ -36,13 +36,13 @@ def create_social_network(data):
 
     f_list = data.splitlines()
     frd_l = []
-    for i in flist:
+    for i in f_list:
         k = i.split(" follows ")
         # z= k[0].split(",")
-        frdl.append(k)
+        frd_l.append(k)
     frd_dict = {}
-    for i in range(len(frdl)):
-        d[frdl[i][0]] = frdl[i][1].split(",")
+    for i in range(len(frd_l)):
+        d[frd_l[i][0]] = frd_l[i][1].split(",")
     return frd_dict
 def main():
     '''
