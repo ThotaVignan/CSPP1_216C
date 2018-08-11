@@ -41,8 +41,8 @@ def create_social_network(data):
             # z= k[0].split(",")
             frd_l.append(k)
         frd_dict = {}
-        for i in range(len(frd_l)):
-            frd_dict[frd_l[i][0]] = frd_l[i][1].split(",")
+        for i in frd_l:
+            frd_dict[i[0]] = i[1].split(",")
         return frd_dict
     return {}
 def main():
