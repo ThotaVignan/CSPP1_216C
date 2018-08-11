@@ -55,7 +55,7 @@ def main():
     '''
     network = eval(input())
     lines = int(input())
-    for i in range(lines):
+    for _ in range(lines):
         # i += 1
         line = input()
         output = line.split(" ")
