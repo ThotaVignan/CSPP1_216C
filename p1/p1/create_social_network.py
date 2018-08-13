@@ -96,6 +96,7 @@ def create_social_network(data):
 
     aDict = {}
     data = data.strip().split('\n')
+    print(data)
     for element in data:
         k, v = element.split(" follows ")
         # v = int(v)
