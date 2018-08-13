@@ -60,7 +60,7 @@ def isValidWord(word, hand, wordList):
             return False
     return (word in wordList)
 def main():
-    word=input()
+    word=input().strip()
     n=int(input())
     adict={}
     for i in range(n):
