@@ -241,7 +241,8 @@ if __name__ == "__main__":
 	COUNT = int(input())
 	# iterate through the test cases to set up hands list
 	HANDS = []
-	for x in range(COUNT):
+	# for x in range(COUNT):
+	while True:
 		line = input()
 		ha = line.split(" ")
 		HANDS.append(ha)
