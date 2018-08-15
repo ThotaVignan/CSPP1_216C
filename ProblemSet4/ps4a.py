@@ -5,7 +5,7 @@ import string
 
 VOWELS = 'aeiou'
 CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
-HAND_SIZE = 7
+HAND_SIZE = 3
 
 SCRABBLE_LETTER_VALUES = {
     'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
@@ -20,7 +20,7 @@ WORDLIST_FILENAME = "words.txt"
 def loadWords():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
-    
+
     Depending on the size of the word list, this function may
     take a while to finish.
     """
@@ -56,7 +56,7 @@ def getFrequencyDict(sequence):
 #
 # Problem #1: Scoring a word
 #
-def getWordScore(word, n):
+def getWordScore(Word, n):
     """
     Returns the score for a word. Assumes the word is a valid word.
 
@@ -71,9 +71,12 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
-
-
+    score = 0
+    for letter in Word:
+        score+=SCRABBLE_LETTER_VALUES[letter]
+    if len(Word)==n:
+        return score*len(Word)+50
+    return score*len(Word)
 
 #
 # Problem #2: Make sure you understand how this function works and what it does!
@@ -142,8 +145,13 @@ def updateHand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-    # TO DO ... <-- Remove this comment when you code this function
-
+    # print(word,"update")
+    # print(hand,"update")
+    hand_new = hand.copy()
+    for  letter in word:
+        if letter in hand_new:
+            hand_new[letter]-=1
+    return hand_new
 
 
 #
@@ -160,8 +168,15 @@ def isValidWord(word, hand, wordList):
     hand: dictionary (string -> int)
     wordList: list of lowercase strings
     """
-    # TO DO ... <-- Remove this comment when you code this function
-
+    # # TO DO ... <-- Remove this comment when you code this function
+    # for letter in word:
+    #     if hand[letter] == 0:
+    #         return False
+    hand_word = getFrequencyDict(word)
+    for letter in word:
+        if hand[letter] != hand_word[letter]:
+            False
+    return True
 
 #
 # Problem #4: Playing a hand
@@ -175,10 +190,31 @@ def calculateHandlen(hand):
     returns: integer
     """
     # TO DO... <-- Remove this comment when you code this function
+    length = 0
+    for letters in hand:
+        length+=hand[letters]
+    return length
 
 
 
 def playHand(hand, wordList, n):
+    # Display the hand
+    print(hand)
+    # Ask user for input
+    total = 0
+    while True:
+        ip = input()
+        if ip==".":
+            break
+        if isValidWord(ip,hand,wordList):
+            hand = updateHand(hand,ip)
+            total+=getWordScore(ip,n)
+            print(total)
+            if calculateHandlen(hand)==0:
+                return
+
+        else:
+            print("enter a valid word")
     """
     Allows the user to play the given hand, as follows:
 
@@ -205,9 +241,7 @@ def playHand(hand, wordList, n):
     
     # As long as there are still letters left in the hand:
     
-        # Display the hand
         
-        # Ask user for input
         
         # If the input is a single period:
         
@@ -243,11 +277,35 @@ def playGame(wordList):
       * If the user inputs 'r', let the user play the last hand again.
       * If the user inputs 'e', exit the game.
       * If the user inputs anything else, tell them their input was invalid.
- 
+    
     2) When done playing the hand, repeat from step 1    
     """
-    # TO DO ... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this line when you code the function
+    count = 0
+    hand = dealHand(HAND_SIZE) 
+    while True:
+        print("n or r or e")
+        ip = input()
+        if ip == "n":
+            print(hand.keys())
+            print("Start the game")
+            playHand(hand,wordList,HAND_SIZE)
+        elif ip == "r":
+            if count:
+                print("continue the game")
+                playHand(hand,wordList,HAND_SIZE)
+            print("Select a hand")
+        elif ip == "e":
+            print("Bye bye")
+
+            break
+        else:
+            print("Invalid Input")
+
+
+
+
+
+    # <-- Remove this line when you code the function
    
 
 
