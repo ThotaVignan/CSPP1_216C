@@ -20,12 +20,14 @@ def max_rank(rank, tie):
     res = res_f.index(max(res_f))
     return tie[res]
 def add_result(rank, hand):
+    ''' adding hands to dictonary of same kind'''
     global tie_result
     if rank in tie_result:
         tie_result[rank].append(hand)
     else:
         tie_result[rank] = [hand]
 def is_high_card(hand):
+    ''' checking for a high kind'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -33,6 +35,7 @@ def is_high_card(hand):
     return len(set_) == 5
 
 def is_fiveofa_kind(hand):
+    ''' checking for a five of kind'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -40,6 +43,7 @@ def is_fiveofa_kind(hand):
     return len(set_) == 1
 
 def is_fourofa_kind(hand):
+    ''' checking for a four of kind'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -47,6 +51,7 @@ def is_fourofa_kind(hand):
     return len(set_) == 2
 
 def is_threeofa_kind(hand):
+    ''' checking for a three of kind'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -54,6 +59,7 @@ def is_threeofa_kind(hand):
     return len(set_) == 3
 
 def is_one_pair(hand):
+    ''' checking for one pair'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -62,9 +68,11 @@ def is_one_pair(hand):
 
 
 def is_fullhouse(hand):
+    ''' checking for full house (if it is both three kind and one pair)'''
     return is_threeofa_kind(hand) and is_one_pair(hand)
 
 def is_two_pair(hand):
+    ''' checking for two pair'''
     list_ = []
     for num, _ in hand:
         list_.append(num)
@@ -72,6 +80,7 @@ def is_two_pair(hand):
     return len(set_) == 3
 
 def is_straight(hand):
+    ''' checking for straight'''
     global ranking_list
     list_F = []
     for num, _ in hand:
@@ -80,6 +89,7 @@ def is_straight(hand):
     return max(set_F)-min(set_F) == 4
 
 def is_flush(hand):
+    ''' checking for flush'''
     list_ = []
     for _, suite in hand:
         list_.append(suite)
@@ -88,6 +98,7 @@ def is_flush(hand):
     return len(set_) == 1
 
 def hand_rank(hand):
+    ''' finding the rand of each hand'''
     if is_fiveofa_kind(hand):
         add_result(0, hand)
         return 0
@@ -120,8 +131,8 @@ def hand_rank(hand):
         return 9
 
 def poker(hands):
+    '''initiating poker game'''
     list(map(hand_rank, hands))
-    # print(res)
     return 0
 if __name__ == "__main__":
     COUNT = int(input())
