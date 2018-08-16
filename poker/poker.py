@@ -1,6 +1,6 @@
 result = {}
 ranking = '0023456789TJQKA'
-ranking_list = [int(i) for i in ranking]
+ranking_list = [i for i in ranking]
 # def add_result(rank,hand):
 # 	global result
 # 	if rank in result:
