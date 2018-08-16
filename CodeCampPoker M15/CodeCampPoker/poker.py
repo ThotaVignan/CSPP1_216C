@@ -1,4 +1,5 @@
-tie_result = {}
+'''implementation of POKER GAME'''
+t_result = {}
 id_ranking = '--23456789TJQKA'
 list_ranking = [i for i in id_ranking]
 def kind(hand):
@@ -23,11 +24,11 @@ def max_rank(rank, tie):
     return tie[res]
 def add_result(rank, hand):
     ''' adding hands to dictonary of same kind'''
-    # global tie_result
-    if rank in tie_result:
-        tie_result[rank].append(hand)
+    # global t_result
+    if rank in t_result:
+        t_result[rank].append(hand)
     else:
-        tie_result[rank] = [hand]
+        t_result[rank] = [hand]
 def is_high_card(hand):
     ''' checking for a high kind'''
     list_ = []
@@ -144,7 +145,7 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    p_game, high_rank_list = min(tie_result), tie_result[min(tie_result)]
+    p_game, high_rank_list = min(t_result), t_result[min(t_result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
