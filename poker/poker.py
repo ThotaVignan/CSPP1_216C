@@ -38,7 +38,7 @@ def is_one_pair(hand):
 	list_ =[]
 	for num,suite in hand:
 		list_.append(num)
-	set_ = set(l)
+	set_ = set(list_)
 	return len(set_)==4
 	
 
@@ -49,7 +49,7 @@ def is_two_pair(hand):
 	list_ =[]
 	for num,suite in hand:
 		list_.append(num)
-	set_ = set(l)
+	set_ = set(list_)
 	return len(set_)==3
 
 
