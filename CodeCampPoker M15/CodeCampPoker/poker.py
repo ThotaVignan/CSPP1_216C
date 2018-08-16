@@ -1,9 +1,9 @@
 tie_result = {}
 id_ranking = '--23456789TJQKA'
 ranking_list = [i for i in id_ranking]
-def kind(li):
+def kind(hand):
     '''checking the freqency or kind of a hand'''
-    return list(map(li.count, li))
+    return list(map(hand.count, hand))
 def max_rank(rank, tie):
     ''' finding the winner for the game'''
     result_list = [[ranking_list.index(num) for num, face in card] for card in tie]
@@ -23,7 +23,7 @@ def max_rank(rank, tie):
     return tie[res]
 def add_result(rank, hand):
     ''' adding hands to dictonary of same kind'''
-    global tie_result
+    # global tie_result
     if rank in tie_result:
         tie_result[rank].append(hand)
     else:
@@ -83,7 +83,7 @@ def is_two_pair(hand):
 
 def is_straight(hand):
     ''' checking for straight'''
-    global ranking_list
+    # global ranking_list
     list_F = []
     for num, _ in hand:
         list_F.append(ranking_list.index(num))
