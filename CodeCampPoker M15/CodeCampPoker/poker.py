@@ -30,8 +30,8 @@ def max_rank(rank,tie):
 	l1 = [max(i) for i in rl]
 	l2 = []
 	for i in range(len(l1)):
-		if l1[i] in l[i]:
-			l2.append(l[i].index(l1[i]))
+		if l1[i] in rl[i]:
+			l2.append(rl[i].index(l1[i]))
 	print(l2,"l2") 
 	l3=[]
 	for i in range(len(result_list)):
