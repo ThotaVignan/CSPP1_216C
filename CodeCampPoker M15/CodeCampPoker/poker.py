@@ -27,8 +27,8 @@ def max_rank(rank,tie):
 	m = []
 	# max_count = 0
 	for i in range(len(set_list)):
-		for j in range(set_list[i]):
-			if result_list.count(set_list[i][j]) == tie_breaker[rank]:
+		for j in set_list[i]:
+			if result_list.count(j) == tie_breaker[rank]:
 				m.append()
 
 	max_count = max(m)
