@@ -67,12 +67,9 @@ def is_straight(hand):
 	global ranking_list
 	# print(ranking_list)
 	list_F = []
-	list_S = []
 	for num,suite in hand:
-		list_S.append(suite)
 		list_F.append(ranking_list.index(num))
 	set_F = set(list_F)
-	set_S = set(list_S)
 	return max(set_F)-min(set_F)==4
 
 def is_flush(hand):
