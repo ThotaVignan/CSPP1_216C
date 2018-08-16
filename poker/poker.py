@@ -73,8 +73,7 @@ def is_straight(hand):
 		list_F.append(ranking_list.index(num))
 	set_F = set(list_F)
 	set_S = set(list_S)
-	# print(set_S)
-	return len(set_S)==1 and max(set_F)-min(set_F)==4
+	return max(set_F)-min(set_F)==4
 
 def is_flush(hand):
 	'''
