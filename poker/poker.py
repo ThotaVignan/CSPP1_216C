@@ -1,5 +1,5 @@
 # result = {}
-ranking = '0023456789TJQKA'
+ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
 # def add_result(rank,hand):
 # 	global result
@@ -65,13 +65,16 @@ def is_straight(hand):
 		Write the code for it and return True if it is a straight else return False
 	'''
 	global ranking_list
-	list_ = []
+	# print(ranking_list)
+	list_F = []
+	list_S = []
 	for num,suite in hand:
-		list_.append(num)
-		# ranking_list.index(num)
-	set_ = set(list_)
-	return len(set_)==5 
-	# and max(set_)-min(set_)==4
+		list_S.append(suite)
+		list_F.append(ranking_list.index(num))
+	set_F = set(list_F)
+	set_S = set(list_S)
+	print(set_S)
+	return len(set_S)==1 and max(set_)-min(set_)==4
 
 def is_flush(hand):
 	'''
