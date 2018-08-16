@@ -4,18 +4,18 @@ ranking_list = [i for i in ranking]
 def kind(li):
     return list(map(li.count, li))
 def max_rank(rank, tie):
-    result_list = [[ranking.index(num) for num,face in card] for card in tie]
+    result_list = [[ranking.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
 
     kind_freq = list(map(kind, result_list))
 
     if rank == 9:
-        max_val = [result_list[index][4] for index in range(len(tie))]      
+        max_val = [result_list[index][4] for index in range(len(tie))]
         result = max_val.index(max(max_val))
         return tie[result]
     l1 = [max(index) for index in kind_freq]
-    l2 = [ kind_freq[index].index(l1[index]) for index in range(len(l1)) if l1[index] in kind_freq[index]]
+    l2 = [ kind_freq[idx].index(l1[idx]) for idx in range(len(l1)) if l1[idx] in kind_freq[idx]]
     l3 = [result_list[index][l2[index]] for index in range(len(result_list))]
     m = l3.index(max(l3))
     return tie[m]
