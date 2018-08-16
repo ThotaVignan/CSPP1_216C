@@ -5,7 +5,7 @@ ranking_list = [i for i in ranking]
 def max_rank(rank,tie):
 	tie_ = ()
 	for i in range(len(tie)):
-		tie_.append(tuple(rank,tuple(tie(i))))
+		tie_.add(tuple(rank,tuple(tie(i))))
 
 	return tie[index(max(tie_))]
 
@@ -159,7 +159,7 @@ if __name__ == "__main__":
 		HANDS.append(ha)
 	# print(poker(HANDS))
 	poker(HANDS)
-	print(result)
+	# print(result)
 	game,high_rank_list = min(result),result[min(result)]
 	if len(high_rank_list) == 1:
 		print(" ".join(high_rank_list[0]))
