@@ -22,7 +22,7 @@ def max_rank(rank,tie):
 
 	set_list = []
 	for i in result_list:
-		set_list.add(set(i))
+		set_list.append(set(i))
 
 	m = []
 	# max_count = 0
@@ -139,7 +139,7 @@ def hand_rank(hand):
 	
 def poker(hands):
 	res = list(map(hand_rank,hands))
-	print(res)
+	# print(res)
 	return 0
 if __name__ == "__main__":
 	COUNT = int(input())
@@ -148,8 +148,9 @@ if __name__ == "__main__":
 		line = input()
 		ha = line.split(" ")
 		HANDS.append(ha)
-	print(poker(HANDS))
-	print(result)
+	# print(poker(HANDS))
+	poker(HANDS)
+	# print(result)
 	game,high_rank_list = max(result),result[max(result)]
 	if len(high_rank_list) == 1:
 		print(" ".join(high_rank_list[0]))
