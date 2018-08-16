@@ -15,7 +15,7 @@ def max_rank(rank, tie):
         result = max_val.index(max(max_val))
         return tie[result]
     l1 = [max(index) for index in kind_freq]
-    l2 = [ kind_freq[idx].index(l1[idx]) for idx in range(len(l1)) if l1[idx] in kind_freq[idx]]
+    l2 = [kind_freq[idx].index(l1[idx]) for idx in range(len(l1)) if l1[idx] in kind_freq[idx]]
     l3 = [result_list[index][l2[index]] for index in range(len(result_list))]
     m = l3.index(max(l3))
     return tie[m]
@@ -61,7 +61,7 @@ def is_one_pair(hand):
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 4
-    
+
 
 def is_fullhouse(hand):
     return is_threeofa_kind(hand) and is_one_pair(hand)
@@ -85,7 +85,7 @@ def is_flush(hand):
     list_ = []
     for _, suite in hand:
         list_.append(suite)
-    
+
     set_ = set(list_)
     return len(set_) == 1
 
@@ -110,7 +110,7 @@ def hand_rank(hand):
         add_result(8, hand);return 8
     if is_high_card(hand):
         add_result(9, hand);return 9
-    
+
 def poker(hands):
     res = list(map(hand_rank, hands))
     # print(res)
@@ -128,4 +128,3 @@ if __name__ == "__main__":
         print(" ".join(high_rank_list[0]))
     else:
         print(" ".join(max_rank(game, high_rank_list)))
-
