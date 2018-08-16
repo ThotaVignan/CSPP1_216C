@@ -45,7 +45,7 @@ def is_one_pair(hand):
 
 def is_fullhouse(hand):
 	return is_threeofa_kind(hand) and is_two_pair(hand)
-	
+
 def is_two_pair(hand):
 	list_ =[]
 	for num,suite in hand:
@@ -87,7 +87,7 @@ def is_flush(hand):
 	for num,suite in hand:
 		list_.append(suite)
 	
-	set_ set(list_)
+	set_ = set(list_)
 	return len(set_) == 1
 	
 
