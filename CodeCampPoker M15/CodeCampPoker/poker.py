@@ -14,11 +14,11 @@ def max_rank(rank, tie):
         max_val = [result_list[index][4] for index in range(len(tie))]
         result = max_val.index(max(max_val))
         return tie[result]
-    l1 = [max(index) for index in kind_freq]
-    l2 = [kind_freq[idx].index(l1[idx]) for idx in range(len(l1)) if l1[idx] in kind_freq[idx]]
-    l3 = [result_list[index][l2[index]] for index in range(len(result_list))]
-    m = l3.index(max(l3))
-    return tie[m]
+    tie_f = [max(index) for index in kind_freq]
+    id_f = [kind_freq[ix].index(tie_f[ix]) for ix in range(len(tie_f)) if tie_f[ix] in kind_freq[ix]]
+    res_f = [result_list[idx][id_f[idx]] for idx in range(len(result_list))]
+    res = res_f.index(max(res_f))
+    return tie[res]
 def add_result(rank, hand):
     global tie_result
     if rank in tie_result:
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    game, high_rank_list = min(tie_result), tie_result [min(tie_result)]
+    game, high_rank_list = min(tie_result), tie_result[min(tie_result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
