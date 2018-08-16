@@ -9,7 +9,7 @@
 # 		result[rank].append(hand)
 # 	else:
 # 		result[rank] = [hand]
-def is_high_card(hand):
+# def is_high_card(hand):
 
 def is_fiveofa_kind(hand):
 	for num,suite in hand:
