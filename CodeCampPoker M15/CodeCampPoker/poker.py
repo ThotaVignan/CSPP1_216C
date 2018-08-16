@@ -18,9 +18,9 @@ def max_rank(rank,tie):
 		return tie[m1]
 	l1 = [max(i) for i in rl]
 	l2 = [ rl[i].index(l1[i]) for i in range(len(l1)) if l1[i] in rl[i]]
-	l3=[]
-	for i in range(len(result_list)):
-		l3.append(result_list[i][l2[i]])
+	l3 = [result_list[i][l2[i]] for i in range(len(result_list))]
+	# for i in range(len(result_list)):
+	# 	l3.append(result_list[i][l2[i]])
 	m = l3.index(max(l3))
 	return tie[m]
 def add_result(rank,hand):
