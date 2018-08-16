@@ -104,34 +104,34 @@ def hand_rank(hand):
     ''' finding the rand of each hand'''
     if is_fiveofa_kind(hand):
         add_result(0, hand)
-        return 0
+        return 0+2
     if is_straight(hand) and is_flush(hand):
         add_result(1, hand)
-        return 1
+        return 1+2
     if is_fourofa_kind(hand) and not is_fullhouse(hand):
         add_result(2, hand)
-        return 2
+        return 2+2
     if is_fullhouse(hand) and not is_fourofa_kind(hand):
         add_result(3, hand)
-        return 3
+        return 3+2
     if is_flush(hand):
         add_result(4, hand)
-        return 4
+        return 4+2
     if is_straight(hand):
         add_result(5, hand)
-        return 5
+        return 5+2
     if is_threeofa_kind(hand):
         add_result(6, hand)
-        return 6
+        return 6+2
     if is_two_pair(hand):
         add_result(7, hand)
-        return 7
+        return 7+2
     if is_one_pair(hand):
         add_result(8, hand)
-        return 8
+        return 8+2
     if is_high_card(hand):
         add_result(9, hand)
-        return 9
+        return 9+2
 
 def poker(hands):
     '''initiating poker game'''
