@@ -73,8 +73,8 @@ def is_straight(hand):
 		list_F.append(ranking_list.index(num))
 	set_F = set(list_F)
 	set_S = set(list_S)
-	print(set_S)
-	return len(set_S)==1 and max(set_)-min(set_)==4
+	# print(set_S)
+	return len(set_S)==1 and max(set_F)-min(set_F)==4
 
 def is_flush(hand):
 	'''
@@ -132,7 +132,7 @@ def hand_rank(hand):
 	# third would be a straight with the return value 1
 	# any other hand would be the fourth best with the return value 0
 	# max in poker function uses these return values to select the best hand
-	return 0
+	return 9
 def poker(hands):
 	'''
 		This function is completed for you. Read it to learn the code.
