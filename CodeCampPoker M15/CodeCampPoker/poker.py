@@ -1,7 +1,6 @@
 result = {}
 ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
-# tie_breaker= {0:5,1:5,2:4,3:3,4:1,5:5,6:3,7:2,8:2,9:5}
 def max_rank(rank,tie):
 
 	result_list = []
@@ -19,48 +18,7 @@ def max_rank(rank,tie):
 		tie_.append(tuple(te))
 	t = tuple(tie_)
 	result = t.index(max(t))
-	# print(result)
-	# ans = tie[result]
-	# x = ans[1]
-	# x = list(x) 
 	return tie[result]
-
-
-
-
-	# result_list = []
-	# if rank == 4:
-	# 	for card in tie:
-	# 		rank_list = []
-	# 		for num,face in card:
-	# 			rank_list.append(ranking.index(num))
-	# 		result_list.append(rank_list)
-	# 	ans_list = [max(maximum) for maximum in result_list]
-	# 	result = ans_list.index(max(ans_list))
-	# 	return tie[result]
-
-	# for card in tie:
-	# 	rank_list = []
-	# 	for num,face in card:
-	# 		rank_list.append(num)
-	# 	result_list.append(rank_list)
-
-	# set_list = []
-	# for i in result_list:
-	# 	set_list.append(set(i))
-
-	# m = []
-	# # max_count = 0
-	# for i in range(len(set_list)):
-	# 	for j in set_list[i]:
-	# 		if result_list.count(j) == tie_breaker[rank]:
-	# 			m.append()
-
-	# max_count = max(m)
-	# for i in range(len(result_list)):
-	# 	if max_count in result_list[i]:
-	# 		return tie[i]
-
 
 def add_result(rank,hand):
 	global result
@@ -175,10 +133,10 @@ if __name__ == "__main__":
 		HANDS.append(ha)
 	# print(poker(HANDS))
 	poker(HANDS)
-	# print(result)
+	print(result)
 	game,high_rank_list = min(result),result[min(result)]
 	if len(high_rank_list) == 1:
 		print(" ".join(high_rank_list[0]))
 	else:
 		print(" ".join(max_rank(game,high_rank_list)))
-	# print(high_rank_list)
+
