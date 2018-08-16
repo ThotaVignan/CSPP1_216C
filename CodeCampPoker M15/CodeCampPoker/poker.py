@@ -2,8 +2,10 @@ tie_result = {}
 id_ranking = '--23456789TJQKA'
 ranking_list = [i for i in id_ranking]
 def kind(li):
+    '''checking the freqency or kind of a hand'''
     return list(map(li.count, li))
 def max_rank(rank, tie):
+    ''' finding the winner for the game'''
     result_list = [[ranking_list.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
@@ -14,8 +16,8 @@ def max_rank(rank, tie):
         max_val = [result_list[index][4] for index in range(len(tie))]
         result = max_val.index(max(max_val))
         return tie[result]
-    tie_f = [max(index) for index in kind_freq]
-    id_f = [kind_freq[ix].index(tie_f[ix]) for ix in range(len(tie_f)) if tie_f[ix] in kind_freq[ix]]
+    ti_f = [max(index) for index in kind_freq]
+    id_f = [kind_freq[ix].index(ti_f[ix]) for ix in range(len(ti_f)) if ti_f[ix] in kind_freq[ix]]
     res_f = [result_list[idx][id_f[idx]] for idx in range(len(result_list))]
     res = res_f.index(max(res_f))
     return tie[res]
