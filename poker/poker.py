@@ -3,16 +3,16 @@
 	Read about poker hands here.
 	https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-result = {}
+# result = {}
 
 
-def add_result(rank,hand):
-	global result
-	if rank in result:
-		result[rank].append(hand)
-	else:
-		result[rank] = [hand]
-def is_high_card(hand):
+# def add_result(rank,hand):
+# 	global result
+# 	if rank in result:
+# 		result[rank].append(hand)
+# 	else:
+# 		result[rank] = [hand]
+# def is_high_card(hand):
 
 def is_fiveofa_kind(hand):
 	for num,suite in hand:
