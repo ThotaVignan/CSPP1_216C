@@ -65,7 +65,7 @@ def is_one_pair(hand):
 	
 
 def is_fullhouse(hand):
-	return is_threeofa_kind(hand) and is_two_pair(hand)
+	return is_threeofa_kind(hand) and is_one_pair(hand)
 
 def is_two_pair(hand):
 	list_ =[]
