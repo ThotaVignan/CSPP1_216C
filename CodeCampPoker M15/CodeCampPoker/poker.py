@@ -136,7 +136,7 @@ def hand_rank(hand):
 def poker(hands):
     '''initiating poker game'''
     list(map(hand_rank, hands))
-    return 0
+
 if __name__ == "__main__":
     COUNT = int(input())
     HANDS = []
