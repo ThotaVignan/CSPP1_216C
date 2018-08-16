@@ -84,7 +84,7 @@ def is_flush(hand):
 	for num,suite in hand:
 		list_.append(suite)
 	
-	set_ set(list_)
+	set_ = set(list_)
 	return len(set_) == 1
 
 
