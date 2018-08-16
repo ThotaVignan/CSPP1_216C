@@ -11,16 +11,12 @@ def max_rank(rank,tie):
 	result_list = list(map(sorted,result_list))
 	rl = list(map(kind,result_list))
 	if rank == 9:
-		lll1 = []		
-		for i in range(len(tie)):
-				lll1.append(result_list[i][4])
+		lll1 = [result_list[i][4] for i in range(len(tie))]		
 		m1 = lll1.index(max(lll1))
 		return tie[m1]
 	l1 = [max(i) for i in rl]
 	l2 = [ rl[i].index(l1[i]) for i in range(len(l1)) if l1[i] in rl[i]]
 	l3 = [result_list[i][l2[i]] for i in range(len(result_list))]
-	# for i in range(len(result_list)):
-	# 	l3.append(result_list[i][l2[i]])
 	m = l3.index(max(l3))
 	return tie[m]
 def add_result(rank,hand):
