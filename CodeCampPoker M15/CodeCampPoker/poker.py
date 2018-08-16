@@ -1,6 +1,6 @@
-result = {}
-ranking = '--23456789TJQKA'
-ranking_list = [i for i in ranking]
+tie_Result = {}
+id_Ranking = '--23456789TJQKA'
+Ranking_List = [i for i in id_Ranking]
 def kind(li):
     return list(map(li.count, li))
 def max_rank(rank, tie):
@@ -20,11 +20,11 @@ def max_rank(rank, tie):
     m = l3.index(max(l3))
     return tie[m]
 def add_result(rank, hand):
-    global result
-    if rank in result:
-        result[rank].append(hand)
+    global tie_Result 
+    if rank in tie_Result :
+        tie_Result[rank].append(hand)
     else:
-        result[rank] = [hand]
+        tie_Result[rank] = [hand]
 def is_high_card(hand):
     list_ = []
     for num, _ in hand:
@@ -74,10 +74,10 @@ def is_two_pair(hand):
     return len(set_) == 3
 
 def is_straight(hand):
-    global ranking_list
+    global Ranking_List
     list_F = []
     for num, _ in hand:
-        list_F.append(ranking_list.index(num))
+        list_F.append(Ranking_List.index(num))
     set_F = set(list_F)
     return max(set_F)-min(set_F) == 4
 
@@ -123,7 +123,7 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    game, high_rank_list = min(result), result[min(result)]
+    game, high_rank_list = min(tie_Result ), tie_Result [min(tie_Result )]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
