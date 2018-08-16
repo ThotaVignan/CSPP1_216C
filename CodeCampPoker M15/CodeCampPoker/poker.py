@@ -145,8 +145,8 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    p_game, HIGH_RANK_LIST = min(T_RESULT), T_RESULT[min(T_RESULT)]
+    GAME, HIGH_RANK_LIST = min(T_RESULT), T_RESULT[min(T_RESULT)]
     if len(HIGH_RANK_LIST) == 1:
         print(" ".join(HIGH_RANK_LIST[0]))
     else:
-        print(" ".join(max_rank(p_game, HIGH_RANK_LIST)))
+        print(" ".join(max_rank(GAME, HIGH_RANK_LIST)))
