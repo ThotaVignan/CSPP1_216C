@@ -1,10 +1,10 @@
-tie_Result = {}
-id_Ranking = '--23456789TJQKA'
-Ranking_List = [i for i in id_Ranking]
+tie_result = {}
+id_ranking = '--23456789TJQKA'
+ranking_list = [i for i in id_ranking]
 def kind(li):
     return list(map(li.count, li))
 def max_rank(rank, tie):
-    result_list = [[Ranking_List.index(num) for num, face in card] for card in tie]
+    result_list = [[ranking_list.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
 
@@ -20,11 +20,11 @@ def max_rank(rank, tie):
     m = l3.index(max(l3))
     return tie[m]
 def add_result(rank, hand):
-    global tie_Result
-    if rank in tie_Result:
-        tie_Result[rank].append(hand)
+    global tie_result
+    if rank in tie_result:
+        tie_result[rank].append(hand)
     else:
-        tie_Result[rank] = [hand]
+        tie_result[rank] = [hand]
 def is_high_card(hand):
     list_ = []
     for num, _ in hand:
@@ -53,7 +53,6 @@ def is_threeofa_kind(hand):
     set_ = set(list_)
     return len(set_) == 3
 
-
 def is_one_pair(hand):
     list_ = []
     for num, _ in hand:
@@ -73,10 +72,10 @@ def is_two_pair(hand):
     return len(set_) == 3
 
 def is_straight(hand):
-    global Ranking_List
+    global ranking_list
     list_F = []
     for num, _ in hand:
-        list_F.append(Ranking_List.index(num))
+        list_F.append(ranking_list.index(num))
     set_F = set(list_F)
     return max(set_F)-min(set_F) == 4
 
@@ -122,7 +121,7 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    game, high_rank_list = min(tie_Result), tie_Result [min(tie_Result)]
+    game, high_rank_list = min(tie_result), tie_result [min(tie_result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
