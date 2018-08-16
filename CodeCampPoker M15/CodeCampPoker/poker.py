@@ -15,36 +15,28 @@ def max_rank(rank,tie):
 		for num,face in card:
 			rank_list.append(ranking.index(num))
 		result_list.append(rank_list)
-	l = list(map(kind,result_list))
-
+	result_list = list(map(sorted,result_list))
+	if rank == 9:
+		rl = list(map(kind,result_list))
+		ll = [len(set(i))==1 for i in rl]
+		lll = list(set(ll))
+		lll1 = []
+		if lll[0]:
+			for i in range(len(tie)):
+				lll1.append(result_list[i][4])
+		m1 = lll1.index(max(lll1))
+		return tie[m1]
 	l1 = [max(i) for i in l]
-	# print(l1,"l1")
 	l2 = []
 	for i in range(len(l1)):
 		if l1[i] in l[i]:
 			l2.append(l[i].index(l1[i]))
-
-	# l2 = [l1.index(i) for i in l]
-	# print(l2,"l2") 
+	print(l2,"l2") 
 	l3=[]
 	for i in range(len(result_list)):
 		l3.append(result_list[i][l2[i]])
-	# print(l3)
 	m = l3.index(max(l3))
 	return tie[m]
-
-	# tie_ = []
-	# for i in result_list:
-	# 	te = []
-	# 	te.append(rank)
-	# 	te.append(tuple(i))
-	# 	tie_.append(tuple(te))
-	# t = tuple(tie_)
-	# print(t)
-	# print(max(t))
-	# result = t.index(max(t))
-	return 0
-
 def add_result(rank,hand):
 	global result
 	if rank in result:
