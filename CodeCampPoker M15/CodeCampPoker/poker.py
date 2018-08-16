@@ -6,8 +6,8 @@ def max_rank(rank,tie):
 	tie_ = []
 	for i in range(len(tie)):
 		tie_.append(tuple(rank,tuple(tie(i))))
-
-	return tie[index(max(tuple(tie_)))]
+	t = tuple(tie_)
+	return tie[index(max(t))]
 
 
 
