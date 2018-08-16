@@ -12,6 +12,7 @@
 # def is_high_card(hand):
 
 def is_fiveofa_kind(hand):
+	list_ = []
 	for num,suite in hand:
 		list_.append(num)
 	set_ = set(l)
@@ -19,13 +20,14 @@ def is_fiveofa_kind(hand):
 
 
 def is_fourofa_kind(hand):
+	list_ = []
 	for num,suite in hand:
 		list_.append(num)
 	set_ = set(l)
 	return len(set_)==2
 
 def is_threeofa_kind(hand):
-	
+	list_ = []
 	for num,suite in hand:
 		list_.append(num)
 	set_ = set(l)
