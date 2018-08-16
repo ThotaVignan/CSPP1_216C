@@ -91,25 +91,25 @@ def is_flush(hand):
 
 def hand_rank(hand):
     if is_fiveofa_kind(hand):
-        add_result(0,hand);return 0
+        add_result(0, hand);return 0
     if is_straight(hand) and is_flush(hand):
-        add_result(1,hand);return 1
+        add_result(1, hand);return 1
     if is_fourofa_kind(hand) and not(is_fullhouse(hand)):
-        add_result(2,hand);return 2
+        add_result(2, hand);return 2
     if is_fullhouse(hand) and not(is_fourofa_kind(hand)):
-        add_result(3,hand);return 3
+        add_result(3, hand);return 3
     if is_flush(hand):
-        add_result(4,hand);return 4
+        add_result(4, hand);return 4
     if is_straight(hand):
-        add_result(5,hand);return 5
+        add_result(5, hand);return 5
     if is_threeofa_kind(hand):
-        add_result(6,hand);return 6
+        add_result(6, hand);return 6
     if is_two_pair(hand):
-        add_result(7,hand);return 7
+        add_result(7, hand);return 7
     if is_one_pair(hand):
-        add_result(8,hand);return 8
+        add_result(8, hand);return 8
     if is_high_card(hand):
-        add_result(9,hand);return 9
+        add_result(9, hand);return 9
     
 def poker(hands):
     res = list(map(hand_rank,hands))
