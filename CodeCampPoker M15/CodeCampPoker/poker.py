@@ -4,7 +4,7 @@ Ranking_List = [i for i in id_Ranking]
 def kind(li):
     return list(map(li.count, li))
 def max_rank(rank, tie):
-    result_list = [[ranking.index(num) for num, face in card] for card in tie]
+    result_list = [[Ranking_List.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
 
