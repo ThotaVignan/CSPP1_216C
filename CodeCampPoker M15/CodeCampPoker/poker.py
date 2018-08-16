@@ -123,10 +123,9 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    # print(result)
-    game,high_rank_list = min(result),result[min(result)]
+    game, high_rank_list = min(result), result[min(result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
-        print(" ".join(max_rank(game,high_rank_list)))
+        print(" ".join(max_rank(game, high_rank_list)))
 
