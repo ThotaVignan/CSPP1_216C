@@ -20,8 +20,8 @@ def max_rank(rank, tie):
     m = l3.index(max(l3))
     return tie[m]
 def add_result(rank, hand):
-    global tie_Result 
-    if rank in tie_Result :
+    global tie_Result
+    if rank in tie_Result:
         tie_Result[rank].append(hand)
     else:
         tie_Result[rank] = [hand]
@@ -38,7 +38,6 @@ def is_fiveofa_kind(hand):
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 1
-
 
 def is_fourofa_kind(hand):
     list_ = []
@@ -123,7 +122,7 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    game, high_rank_list = min(tie_Result ), tie_Result [min(tie_Result )]
+    game, high_rank_list = min(tie_Result), tie_Result [min(tie_Result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
