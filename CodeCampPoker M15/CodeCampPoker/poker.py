@@ -1,12 +1,12 @@
 tie_result = {}
 id_ranking = '--23456789TJQKA'
-ranking_list = [i for i in id_ranking]
+list_ranking = [i for i in id_ranking]
 def kind(hand):
     '''checking the freqency or kind of a hand'''
     return list(map(hand.count, hand))
 def max_rank(rank, tie):
     ''' finding the winner for the game'''
-    result_list = [[ranking_list.index(num) for num, face in card] for card in tie]
+    result_list = [[list_ranking.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
 
@@ -83,12 +83,12 @@ def is_two_pair(hand):
 
 def is_straight(hand):
     ''' checking for straight'''
-    # global ranking_list
-    list_F = []
+    # global list_ranking
+    f_list = []
     for num, _ in hand:
-        list_F.append(ranking_list.index(num))
-    set_F = set(list_F)
-    return max(set_F)-min(set_F) == 4
+        f_list.append(list_ranking.index(num))
+    f_set = set(f_list)
+    return max(f_set)-min(f_set) == 4
 
 def is_flush(hand):
     ''' checking for flush'''
@@ -144,8 +144,8 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    game, high_rank_list = min(tie_result), tie_result[min(tie_result)]
+    p_game, high_rank_list = min(tie_result), tie_result[min(tie_result)]
     if len(high_rank_list) == 1:
         print(" ".join(high_rank_list[0]))
     else:
-        print(" ".join(max_rank(game, high_rank_list)))
+        print(" ".join(max_rank(p_game, high_rank_list)))
