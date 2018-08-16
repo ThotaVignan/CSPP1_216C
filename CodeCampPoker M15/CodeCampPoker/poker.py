@@ -3,11 +3,11 @@ ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
 # tie_breaker= {0:5,1:5,2:4,3:3,4:1,5:5,6:3,7:2,8:2,9:5}
 def max_rank(rank,tie):
-	tie_ = ()
+	tie_ = []
 	for i in range(len(tie)):
-		tie_.add(tuple(rank,tuple(tie(i))))
+		tie_.append(tuple(rank,tuple(tie(i))))
 
-	return tie[index(max(tie_))]
+	return tie[index(max(tuple(tie_)))]
 
 
 
