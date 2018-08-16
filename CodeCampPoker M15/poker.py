@@ -3,12 +3,15 @@
 	Read about poker hands here.
 	https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-# def add_result(rank,hand):
-# 	global result
-# 	if rank in result:
-# 		result[rank].append(hand)
-# 	else:
-# 		result[rank] = [hand]
+result = {}
+
+
+def add_result(rank,hand):
+	global result
+	if rank in result:
+		result[rank].append(hand)
+	else:
+		result[rank] = [hand]
 def is_high_card(hand):
 
 def is_fiveofa_kind(hand):
@@ -86,48 +89,32 @@ def is_flush(hand):
 	
 	set_ set(list_)
 	return len(set_) == 1
-
+	
 
 def hand_rank(hand):
-	'''
-		You will code this function. The goal of the function is to
-		return a value that max can use to identify the best hand.
-		As this function is complex we will progressively develop it.
-		The first version should identify if the given hand is a straight
-		or a flush or a straight flush.
-	'''
-
-	# By now you should have seen the way a card is represented.
-	# If you haven't then go the main or poker function and print the hands
-	# Each card is coded as a 2 character string. Example Kind of Hearts is KH
-	# First character for face value 2,3,4,5,6,7,8,9,T,J,Q,K,A
-	# Second character for the suit S (Spade), H (Heart), D (Diamond), C (Clubs)
-	# What would be the logic to determine if a hand is a straight or flush?
-	# Let's not think about the logic in the hand_rank function
-	# Instead break it down into two sub functions is_straight and is_flush
+	if is_fiveofa_kind(hand):
+		add_result(0,hand):return 0
 	if is_straight(hand) and is_flush(hand):
-		return 1
+		add_result(1,hand);return 1
 	if is_fourofa_kind(hand):
-		return 2
+		add_result(2,hand);return 2
 	if is_fullhouse(hand):
-		return 3
+		add_result(3,hand);return 3
 	if is_flush(hand):
-		return 4
+		add_result(4,hand);return 4
 	if is_straight(hand):
-		return 5
+		add_result(5,hand);return 5
 	if is_threeofa_kind(hand):
-		return 6
+		add_result(6,hand);return 6
 	if is_two_pair(hand):
-		return 7
+		add_result(7,hand);return 7
 	if is_one_pair(hand):
-		return 8
-	# check for straight, flush and straight flush
-	# best hand of these 3 would be a straight flush with the return value 3
-	# the second best would be a flush with the return value 2
-	# third would be a straight with the return value 1
-	# any other hand would be the fourth best with the return value 0
-	# max in poker function uses these return values to select the best hand
-	return 0
+		add_result(8,hand);return 8
+	if is_high_card(hand):
+		add_result(9,hand);return 9
+	add_result(10,hand);return 10
+
+	
 def poker(hands):
 	'''
 		This function is completed for you. Read it to learn the code.
@@ -147,7 +134,8 @@ def poker(hands):
 	# hand_rank takes a hand and returns its rank
 	# max uses the rank returned by hand_rank and returns the best hand
 	# max(hands, key=hand_rank)
-	return min(hands, key=hand_rank)
+	res = list(map(hand_rank,hands))
+	# return min(hands, key=hand_rank)
 
 if __name__ == "__main__":
 	# read the number of test cases
