@@ -8,28 +8,16 @@ def kind(li):
 
 def max_rank(rank,tie):
 	result_list = [[ranking.index(num) for num,face in card] for card in tie]
-	# for card in tie:
-	# 	rank_list = []
-	# 	for num,face in card:
-	# 		rank_list.append(ranking.index(num))
-	# 	result_list.append(rank_list)
 	result_list = list(map(sorted,result_list))
 	rl = list(map(kind,result_list))
 	if rank == 9:
-		ll = [len(set(i))==1 for i in rl]
-		lll = list(set(ll))
-		lll1 = []
-		if lll[0]:
-			for i in range(len(tie)):
+		lll1 = []		
+		for i in range(len(tie)):
 				lll1.append(result_list[i][4])
 		m1 = lll1.index(max(lll1))
 		return tie[m1]
-
 	l1 = [max(i) for i in rl]
-	l2 = []
-	for i in range(len(l1)):
-		if l1[i] in rl[i]:
-			l2.append(rl[i].index(l1[i]))
+	l2 = [ rl[i].index(l1[i]) for i in range(len(l1)) if l1[i] in rl[i]]
 	l3=[]
 	for i in range(len(result_list)):
 		l3.append(result_list[i][l2[i]])
