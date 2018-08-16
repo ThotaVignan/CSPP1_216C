@@ -1,24 +1,49 @@
 result = {}
 ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
-def max_rank(rank,tie):
 
+
+def kind(li):
+	# s = set(li)
+	# print(s)
+	return list(map(li.count,li))
+
+def max_rank(rank,tie):
 	result_list = []
 	for card in tie:
 		rank_list = []
 		for num,face in card:
 			rank_list.append(ranking.index(num))
 		result_list.append(rank_list)
+	l = list(map(kind,result_list))
 
-	tie_ = []
-	for i in result_list:
-		te = []
-		te.append(rank)
-		te.append(tuple(i))
-		tie_.append(tuple(te))
-	t = tuple(tie_)
-	result = t.index(max(t))
-	return tie[result]
+	l1 = [max(i) for i in l]
+	# print(l1,"l1")
+	l2 = []
+	for i in range(len(l1)):
+		if l1[i] in l[i]:
+			l2.append(l[i].index(l1[i]))
+
+	# l2 = [l1.index(i) for i in l]
+	# print(l2,"l2") 
+	l3=[]
+	for i in range(len(result_list)):
+		l3.append(result_list[i][l2[i]])
+	# print(l3)
+	m = l3.index(max(l3))
+	return tie[m]
+
+	# tie_ = []
+	# for i in result_list:
+	# 	te = []
+	# 	te.append(rank)
+	# 	te.append(tuple(i))
+	# 	tie_.append(tuple(te))
+	# t = tuple(tie_)
+	# print(t)
+	# print(max(t))
+	# result = t.index(max(t))
+	return 0
 
 def add_result(rank,hand):
 	global result
@@ -74,10 +99,6 @@ def is_two_pair(hand):
 	set_ = set(list_)
 	return len(set_)==3
 
-
-
-
-
 def is_straight(hand):
 	global ranking_list
 	list_F = []
@@ -93,8 +114,6 @@ def is_flush(hand):
 	
 	set_ = set(list_)
 	return len(set_) == 1
-
-	
 
 def hand_rank(hand):
 	if is_fiveofa_kind(hand):
@@ -118,8 +137,6 @@ def hand_rank(hand):
 	if is_high_card(hand):
 		add_result(9,hand);return 9
 	
-
-	
 def poker(hands):
 	res = list(map(hand_rank,hands))
 	# print(res)
@@ -131,7 +148,6 @@ if __name__ == "__main__":
 		line = input()
 		ha = line.split(" ")
 		HANDS.append(ha)
-	# print(poker(HANDS))
 	poker(HANDS)
 	# print(result)
 	game,high_rank_list = min(result),result[min(result)]
