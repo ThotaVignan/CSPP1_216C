@@ -3,7 +3,7 @@ ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
 def kind(li):
     return list(map(li.count,li))
-def max_rank(rank,tie):
+def max_rank(rank, tie):
     result_list = [[ranking.index(num) for num,face in card] for card in tie]
 
     result_list = list(map(sorted,result_list))
@@ -19,59 +19,59 @@ def max_rank(rank,tie):
     l3 = [result_list[index][l2[index]] for index in range(len(result_list))]
     m = l3.index(max(l3))
     return tie[m]
-def add_result(rank,hand):
+def add_result(rank, hand):
     global result
     if rank in result:
         result[rank].append(hand)
     else:
         result[rank] = [hand]
 def is_high_card(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==5
+    return len(set_) == 5
 
 def is_fiveofa_kind(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==1
+    return len(set_) == 1
 
 
 def is_fourofa_kind(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==2
+    return len(set_) == 2
 
 def is_threeofa_kind(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==3
+    return len(set_) == 3
 
 
 def is_one_pair(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==4
+    return len(set_) == 4
     
 
 def is_fullhouse(hand):
     return is_threeofa_kind(hand) and is_one_pair(hand)
 
 def is_two_pair(hand):
-    list_ =[]
+    list_ = []
     for num,suite in hand:
         list_.append(num)
     set_ = set(list_)
-    return len(set_)==3
+    return len(set_) == 3
 
 def is_straight(hand):
     global ranking_list
@@ -79,7 +79,7 @@ def is_straight(hand):
     for num,suite in hand:
         list_F.append(ranking_list.index(num))
     set_F = set(list_F)
-    return max(set_F)-min(set_F)==4
+    return max(set_F)-min(set_F) == 4
 
 def is_flush(hand):
     list_ = []
