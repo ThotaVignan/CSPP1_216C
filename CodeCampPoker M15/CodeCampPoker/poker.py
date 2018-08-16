@@ -2,13 +2,13 @@ result = {}
 ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
 def kind(li):
-    return list(map(li.count,li))
+    return list(map(li.count, li))
 def max_rank(rank, tie):
     result_list = [[ranking.index(num) for num,face in card] for card in tie]
 
-    result_list = list(map(sorted,result_list))
+    result_list = list(map(sorted, result_list))
 
-    kind_freq = list(map(kind,result_list))
+    kind_freq = list(map(kind, result_list))
 
     if rank == 9:
         max_val = [result_list[index][4] for index in range(len(tie))]      
@@ -27,14 +27,14 @@ def add_result(rank, hand):
         result[rank] = [hand]
 def is_high_card(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 5
 
 def is_fiveofa_kind(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 1
@@ -42,14 +42,14 @@ def is_fiveofa_kind(hand):
 
 def is_fourofa_kind(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 2
 
 def is_threeofa_kind(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 3
@@ -57,7 +57,7 @@ def is_threeofa_kind(hand):
 
 def is_one_pair(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 4
@@ -68,7 +68,7 @@ def is_fullhouse(hand):
 
 def is_two_pair(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(num)
     set_ = set(list_)
     return len(set_) == 3
@@ -76,14 +76,14 @@ def is_two_pair(hand):
 def is_straight(hand):
     global ranking_list
     list_F = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_F.append(ranking_list.index(num))
     set_F = set(list_F)
     return max(set_F)-min(set_F) == 4
 
 def is_flush(hand):
     list_ = []
-    for num,suite in hand:
+    for num, suite in hand:
         list_.append(suite)
     
     set_ = set(list_)
