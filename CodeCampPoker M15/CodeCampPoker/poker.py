@@ -3,11 +3,27 @@ ranking = '--23456789TJQKA'
 ranking_list = [i for i in ranking]
 # tie_breaker= {0:5,1:5,2:4,3:3,4:1,5:5,6:3,7:2,8:2,9:5}
 def max_rank(rank,tie):
+
+	result_list = []
+	for card in tie:
+		rank_list = []
+		for num,face in card:
+			rank_list.append(ranking.index(num))
+		result_list.append(rank_list)
+
 	tie_ = []
-	for i in range(len(tie)):
-		tie_.append(tuple(rank,tuple(tie(i))))
+	for i in result_list:
+		te = []
+		te.append(rank)
+		te.append(tuple(i))
+		tie_.append(tuple(te))
 	t = tuple(tie_)
-	return tie[index(max(t))]
+	result = t.index(max(t))
+	# print(result)
+	# ans = tie[result]
+	# x = ans[1]
+	# x = list(x) 
+	return tie[result]
 
 
 
