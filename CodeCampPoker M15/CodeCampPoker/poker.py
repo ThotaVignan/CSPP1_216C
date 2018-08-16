@@ -1,13 +1,13 @@
 '''implementation of POKER GAME'''
 T_RESULT = {}
-id_ranking = '--23456789TJQKA'
-list_ranking = [i for i in id_ranking]
+ID_RANKING = '--23456789TJQKA'
+LIST_RANKING = [i for i in ID_RANKING]
 def kind(hand):
     '''checking the freqency or kind of a hand'''
     return list(map(hand.count, hand))
 def max_rank(rank, tie):
     ''' finding the winner for the game'''
-    result_list = [[list_ranking.index(num) for num, face in card] for card in tie]
+    result_list = [[LIST_RANKING.index(num) for num, face in card] for card in tie]
 
     result_list = list(map(sorted, result_list))
 
@@ -84,10 +84,10 @@ def is_two_pair(hand):
 
 def is_straight(hand):
     ''' checking for straight'''
-    # global list_ranking
+    # global LIST_RANKING
     f_list = []
     for num, _ in hand:
-        f_list.append(list_ranking.index(num))
+        f_list.append(LIST_RANKING.index(num))
     f_set = set(f_list)
     return max(f_set)-min(f_set) == 4
 
@@ -145,8 +145,8 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
-    p_game, high_rank_list = min(T_RESULT), T_RESULT[min(T_RESULT)]
-    if len(high_rank_list) == 1:
-        print(" ".join(high_rank_list[0]))
+    p_game, HIGH_RANK_LIST = min(T_RESULT), T_RESULT[min(T_RESULT)]
+    if len(HIGH_RANK_LIST) == 1:
+        print(" ".join(HIGH_RANK_LIST[0]))
     else:
-        print(" ".join(max_rank(p_game, high_rank_list)))
+        print(" ".join(max_rank(p_game, HIGH_RANK_LIST)))
