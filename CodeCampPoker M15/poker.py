@@ -4,8 +4,8 @@
 	https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 result = {}
-
-
+ranking = '0023456789TJQKA'
+ranking_list = [int(i) for i in ranking]
 def add_result(rank,hand):
 	global result
 	if rank in result:
@@ -69,12 +69,13 @@ def is_straight(hand):
 		Think of an algorithm: given the card face value how to check if it a straight
 		Write the code for it and return True if it is a straight else return False
 	'''
+	global ranking_list
 	list_ = []
 	for num,suite in hand:
-		list_.append(num)
+		list_.append(ranking_list.index(num))
 
 	set_ = set(list_)
-	return len(set_)==5
+	return len(set_)==5 and max(set_)-min(set_)==4
 
 def is_flush(hand):
 	'''
