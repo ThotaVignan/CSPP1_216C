@@ -15,7 +15,7 @@ def max_rank(rank,tie):
 		return tie[result]
 
 	for card in tie:
-		rank_set = []
+		rank_list = []
 		for num,face in card:
 			rank_list.append(num)
 		result_list.append(rank_list)
