@@ -4,17 +4,15 @@ ranking_list = [i for i in ranking]
 
 
 def kind(li):
-	# s = set(li)
-	# print(s)
 	return list(map(li.count,li))
 
 def max_rank(rank,tie):
-	result_list = []
-	for card in tie:
-		rank_list = []
-		for num,face in card:
-			rank_list.append(ranking.index(num))
-		result_list.append(rank_list)
+	result_list = [[ranking.index(num) for num,face in card] for card in tie]
+	# for card in tie:
+	# 	rank_list = []
+	# 	for num,face in card:
+	# 		rank_list.append(ranking.index(num))
+	# 	result_list.append(rank_list)
 	result_list = list(map(sorted,result_list))
 	rl = list(map(kind,result_list))
 	if rank == 9:
@@ -32,7 +30,6 @@ def max_rank(rank,tie):
 	for i in range(len(l1)):
 		if l1[i] in rl[i]:
 			l2.append(rl[i].index(l1[i]))
-	# print(l2,"l2") 
 	l3=[]
 	for i in range(len(result_list)):
 		l3.append(result_list[i][l2[i]])
