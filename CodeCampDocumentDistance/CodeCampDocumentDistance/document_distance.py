@@ -1,5 +1,4 @@
 import collections, math ,re
-'''Document Distance - A detailed description is given in the PDF'''
 def similarity_calucalation(num, den1, den2):
     ''' calculating the percentage of similarity'''
     result = num/(den1*den2)
@@ -48,10 +47,10 @@ def similarity(dict1, dict2):
     freq2 = freq_count(dict2)
     swords1 = remove_stopwords(freq1)
     swords2 = remove_stopwords(freq2)
-    numerator =  numerator_product(swords1,swords2)
+    numerator =  numerator_product(swords1, swords2)
     denaminator1 = denaminator_product(swords1)
     denaminator2 = denaminator_product(swords2)
-    matching_similarity = similarity_calucalation(numerator,denaminator1,denaminator2)
+    matching_similarity = similarity_calucalation(numerator, denaminator1, denaminator2)
     return matching_similarity
 
 def load_stopwords(filename):
