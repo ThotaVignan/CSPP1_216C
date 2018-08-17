@@ -1,4 +1,4 @@
-import collections, math ,re
+import collections, math, re
 def similarity_calucalation(num, den1, den2):
     ''' calculating the percentage of similarity'''
     result = num/(den1*den2)
@@ -36,7 +36,7 @@ def format_data(data):
 def freq_count(data):
     '''Finding the frequency of each word in a file'''
     data1 = data.split(' ')
-    count=collections.Counter(data1)
+    count = collections.Counter(data1)
     return count
 
 def similarity(dict1, dict2):
