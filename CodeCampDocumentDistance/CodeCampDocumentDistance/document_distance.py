@@ -2,7 +2,7 @@
 import re
 import math
 
-def calculation(dictonary):
+def calculations(dictonary):
     num = 0
     de1 = 0
     de2 = 0
