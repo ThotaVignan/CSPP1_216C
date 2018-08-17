@@ -7,20 +7,33 @@ def kind(hand):
     return list(map(hand.count, hand))
 def max_rank(rank, tie):
     ''' finding the winner for the game'''
+    print(rank," --- rank")
     result_list = [[LIST_RANKING.index(num) for num, face in card] for card in tie]
+    print(result_list," --- Result List 0")
 
     result_list = list(map(sorted, result_list))
+    print(result_list," --- Result List 1")
+
 
     kind_freq = list(map(kind, result_list))
+    print(kind_freq," --- Kind freq")
 
     if rank == 9:
         max_val = [result_list[index][4] for index in range(len(tie))]
+        print(max_val," --- Max Val")
         result = max_val.index(max(max_val))
+        print(result," --- Result")
+        print(tie[result]," --- tie[result]")
         return tie[result]
     ti_f = [max(index) for index in kind_freq]
+    print(ti_f," --- ti_f")
     id_f = [kind_freq[ix].index(ti_f[ix]) for ix in range(len(ti_f)) if ti_f[ix] in kind_freq[ix]]
+    print(id_f," --- id_f")
     res_f = [result_list[idx][id_f[idx]] for idx in range(len(result_list))]
+    print(res_f," --- res_f")
     res = res_f.index(max(res_f))
+    print(res," --- res")
+    print(tie[res]," --- tie[res]")
     return tie[res]
 def add_result(rank, hand):
     ''' adding hands to dictonary of same kind'''
@@ -145,7 +158,9 @@ if __name__ == "__main__":
         ha = line.split(" ")
         HANDS.append(ha)
     poker(HANDS)
+    print(T_RESULT)
     GAME, HIGH_RANK_LIST = min(T_RESULT), T_RESULT[min(T_RESULT)]
+    print(GAME,HIGH_RANK_LIST)
     if len(HIGH_RANK_LIST) == 1:
         print(" ".join(HIGH_RANK_LIST[0]))
     else:

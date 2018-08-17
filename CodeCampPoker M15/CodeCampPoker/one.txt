@@ -1,0 +1,167 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+AD KD TD JD QD
+
+Your Output: 
+AD KD TD JD QD
+
+----------------------------------------
+########## Testcase 1: Passed ##########
+Expected Output: 
+2D 7D 3D JD QD
+
+Your Output: 
+2D 7D 3D JD QD
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+2D 3S 5S 4C 6D
+
+Your Output: 
+2D 3S 5S 4C 6D
+
+----------------------------------------
+########## Testcase 3: Passed ##########
+Expected Output: 
+3D 6D 7D TD QD
+
+Your Output: 
+3D 6D 7D TD QD
+
+----------------------------------------
+########## Testcase 4: Passed ##########
+Expected Output: 
+4C 7D TC 7C TD
+
+Your Output: 
+4C 7D TC 7C TD
+
+----------------------------------------
+########## Testcase 5: Passed ##########
+Expected Output: 
+6C AH 7S 7H 7D
+
+Your Output: 
+6C AH 7S 7H 7D
+
+----------------------------------------
+########## Testcase 6: Passed ##########
+Expected Output: 
+QS 8D QD 8S TC
+
+Your Output: 
+QS 8D QD 8S TC
+
+----------------------------------------
+########## Testcase 7: Passed ##########
+Expected Output: 
+3C 3D 3S 9S 9D
+
+Your Output: 
+3C 3D 3S 9S 9D
+
+----------------------------------------
+########## Testcase 8: Passed ##########
+Expected Output: 
+9S 9C 7D 9H 9S
+
+Your Output: 
+9S 9C 7D 9H 9S
+
+----------------------------------------
+########## Testcase 9: Passed ##########
+Expected Output: 
+2C 3S 8S 8D TD
+
+Your Output: 
+2C 3S 8S 8D TD
+
+----------------------------------------
+########## Testcase 10: Passed ##########
+Expected Output: 
+2H 2D 4C 4D 4S
+
+Your Output: 
+2H 2D 4C 4D 4S
+
+----------------------------------------
+########## Testcase 11: Passed ##########
+Expected Output: 
+3D 4D 5D 6D 7D
+
+Your Output: 
+3D 4D 5D 6D 7D
+
+----------------------------------------
+########## Testcase 12: Passed ##########
+Expected Output: 
+TC JC QC KC AC
+
+Your Output: 
+TC JC QC KC AC
+
+----------------------------------------
+########## Testcase 13: Passed ##########
+Expected Output: 
+AS KD 3D JD 8H
+
+Your Output: 
+AS KD 3D JD 8H
+
+----------------------------------------
+########## Testcase 14: Passed ##########
+Expected Output: 
+4H QC 3D 7C AS
+
+Your Output: 
+4H QC 3D 7C AS
+
+----------------------------------------
+########## Testcase 15: Passed ##########
+Expected Output: 
+TH KH JH AH QH
+
+Your Output: 
+TH KH JH AH QH
+
+----------------------------------------
+########## Testcase 16: Passed ##########
+Expected Output: 
+5C 4C AS 7D JH
+
+Your Output: 
+5C 4C AS 7D JH
+
+----------------------------------------
+########## Testcase 17: Passed ##########
+Expected Output: 
+TD 3S 5H 4D 6S
+
+Your Output: 
+TD 3S 5H 4D 6S
+
+----------------------------------------
+########## Testcase 18: Passed ##########
+Expected Output: 
+AD 2S 3H 4D 5S
+
+Your Output: 
+AD 2S 3H 4D 5S
+
+----------------------------------------
+Result: 19/19 testcases passed.
+************* Module poker
+poker.py:103:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+poker.py:103:0: R0911: Too many return statements (10/6) (too-many-return-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 9.83/10 (previous run: 9.83/10, -0.00)
+
+
+[u'9.83']
+
+[master c964e0a] " -> 19 of 19 passed. pylint: 9.83/10 "
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+
