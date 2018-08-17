@@ -16,7 +16,7 @@ def calculations(dictonary):
 
 def tokens(data):
     data = data.lower()
-    data = re.sub('[^a-z\ ]', '',data)
+    data = re.sub('[^a-z]', '',data)
     # print(data)
     s_words = load_stopwords("stopwords.txt")
     data = data.strip().split(" ")
