@@ -1,62 +1,52 @@
 ''' Programm to find the similarity of content between two files'''
-import collections
-import math
 import re
-def similarity_calucalation(num, den1, den2):
-    ''' calculating the percentage of similarity'''
-    result = num/(den1*den2)
-    return result
-def denaminator_product(data):
-    ''' adding the frequencies of eac word in a given file'''
-    sum_of_pow_freq = 0
-    # sum([sum_of_pow_freq += data[freq]**2 for freq in data])
-    # for freq in data:
-    #     sum_of_pow_freq += data[freq]**2
-    return math.sqrt(sum([sum_of_pow_freq + data[freq]**2 for freq in data]))
+import math
 
-def numerator_product(data1, data2):
-    '''Finding the product of common words in both files'''
-    product = 0
-    for word in data1:
-        if word in data2:
-            product += data1[word] * data2[word]
-    return product
+def calculation(dictonary):
+    num = 0
+    de1 = 0
+    de2 = 0
+    for d in dictonary:
+        num+=dictonary[d][0]*dictonary[d][1]
+    for d in dictonary:
+        de1+=dictonary[d][0]**2
+    for d in dictonary:
+        de2+=dictonary[d][1]**2  
+    return num/(math.sqrt(de1)*math.sqrt(de2) )
 
-def remove_stopwords(data):
-    '''Removing the stopwords from the given data'''
-    stopword = load_stopwords("stopwords.txt")
-    data1 = data.copy()
-    for word in data1:
-        if word in stopword:
-            del data[word]
-    return data
+def tokens(data):
+    data.lower()
+    s_words = load_stopwords("stopwords.txt")
+    data = data.split(" ")
+    list1 = []
+    for word in data:
+        if word not in s_words:
+            list1.append(re.sub('[^a-z\ ]','',word).strip())
+    return list1
 
-def format_data(data):
-    ''' Converting the data into lowercase and removing the special characters'''
-    lower = data.lower()
-    case = re.sub('[^a-z\ ]', '', lower)
-    return case
 
-def freq_count(data):
-    '''Finding the frequency of each word in a file'''
-    data1 = data.split(' ')
-    data1 = [w for w in data1 if(len(w.strip())) > 0]
-    count = collections.Counter(data1)
-    return count
+def freq(dictonary,data,index):
+
+    for d in data:
+        if d not in dictonary:
+            dictonary[d] = [0,0]
+        else:
+            dictonary[d][index]+=1
+    return dictonary
+
+
 
 def similarity(dict1, dict2):
     '''Compute the document distance as given in the PDF'''
-    dict1 = format_data(dict1)
-    dict2 = format_data(dict2)
-    freq1 = freq_count(dict1)
-    freq2 = freq_count(dict2)
-    swords1 = remove_stopwords(freq1)
-    swords2 = remove_stopwords(freq2)
-    numerator = numerator_product(swords1, swords2)
-    denaminator1 = denaminator_product(swords1)
-    denaminator2 = denaminator_product(swords2)
-    matching_similarity = similarity_calucalation(numerator, denaminator1, denaminator2)
-    return matching_similarity
+    dict1 = tokens(dict1)
+    dict2 = tokens(dict2)
+    dictonary = freq(dictonary,dict1,0)
+    dictonary = freq(dictonary,dict2,1)
+    result = calculations(dictonary)
+    return result
+
+
+
 
 def load_stopwords(filename):
     '''loads stop words from a file and returns a dictionary'''
