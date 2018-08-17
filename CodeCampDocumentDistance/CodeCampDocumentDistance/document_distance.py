@@ -1,3 +1,4 @@
+''' Programm to find the similarity of content between two files'''
 import collections
 import math
 import re
@@ -49,7 +50,7 @@ def similarity(dict1, dict2):
     freq2 = freq_count(dict2)
     swords1 = remove_stopwords(freq1)
     swords2 = remove_stopwords(freq2)
-    numerator =  numerator_product(swords1, swords2)
+    numerator = numerator_product(swords1, swords2)
     denaminator1 = denaminator_product(swords1)
     denaminator2 = denaminator_product(swords2)
     matching_similarity = similarity_calucalation(numerator, denaminator1, denaminator2)
