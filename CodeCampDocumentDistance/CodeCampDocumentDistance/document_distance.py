@@ -33,7 +33,7 @@ def remove_stopwords(data):
 def format_data(data):
     ''' Converting the data into lowercase and removing the special characters'''
     lower = data.lower()
-    regex = re.compile('[^a-z]')
+    regex = re.compile('[^a-z\ ]')
     case = re.sub(regex, '', lower)
     return case
 
