@@ -1,4 +1,6 @@
-import collections, math, re
+import collections
+import math
+import re
 def similarity_calucalation(num, den1, den2):
     ''' calculating the percentage of similarity'''
     result = num/(den1*den2)
