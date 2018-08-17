@@ -38,6 +38,7 @@ def freq(dictonary,data,index):
 
 def similarity(dict1, dict2):
     '''Compute the document distance as given in the PDF'''
+    dictonary = {}
     dict1 = tokens(dict1)
     dict2 = tokens(dict2)
     dictonary = freq(dictonary,dict1,0)
