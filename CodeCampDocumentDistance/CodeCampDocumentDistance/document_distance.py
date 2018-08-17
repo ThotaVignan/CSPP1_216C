@@ -12,7 +12,7 @@ def denaminator_product(data):
     # sum([sum_of_pow_freq += data[freq]**2 for freq in data])
     # for freq in data:
     #     sum_of_pow_freq += data[freq]**2
-    return math.sqrt(sum([sum_of_pow_freq += data[freq]**2 for freq in data]))
+    return math.sqrt(sum([sum_of_pow_freq + data[freq]**2 for freq in data]))
 
 def numerator_product(data1, data2):
     '''Finding the product of common words in both files'''
