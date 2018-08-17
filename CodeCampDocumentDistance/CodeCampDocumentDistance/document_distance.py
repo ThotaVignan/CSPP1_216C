@@ -10,7 +10,7 @@ def denaminator_product(data):
     sum_of_pow_freq = 0
     for freq in data:
         sum_of_pow_freq += data[freq]**2
-    print(sum_of_pow_freq,"sum")
+    # print(sum_of_pow_freq,"sum")
     return math.sqrt(sum_of_pow_freq)
 
 
