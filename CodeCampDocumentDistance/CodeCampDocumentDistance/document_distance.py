@@ -33,8 +33,7 @@ def remove_stopwords(data):
 def format_data(data):
     ''' Converting the data into lowercase and removing the special characters'''
     lower = data.lower()
-    regex = re.compile('[^a-z]')
-    case = regex.sub('', lower)
+    case = re.sub('[^a-z\ ]', '', lower)
     return case
 
 def freq_count(data):
