@@ -16,11 +16,12 @@ def denaminator_product(data):
 def numerator_product(data1, data2):
     '''Finding the product of common words in both files'''
     product = 0
-    for word in data1:
-        if word in data2:
-            product += data1[word] * data2[word]
-    return product
-
+    # [product += data1[word] * data2[word] for word in data1 if word in data2]
+    # for word in data1:
+    #     if word in data2:
+    #         product += data1[word] * data2[word]
+    return [product += data1[word] * data2[word] for word in data1 if word in data2]
+   
 def remove_stopwords(data):
     '''Removing the stopwords from the given data'''
     stopword = load_stopwords("stopwords.txt")
