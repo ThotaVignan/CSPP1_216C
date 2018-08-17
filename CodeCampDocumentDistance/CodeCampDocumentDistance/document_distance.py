@@ -10,7 +10,7 @@ def denaminator_product(data):
     sum_of_pow_freq = 0
     for freq in data:
         sum_of_pow_freq += data[freq]**2
-    # print(sum_of_pow_freq,"sum")
+    # print(sum_of_pow_freq,"sum")s
     return math.sqrt(sum_of_pow_freq)
 
 
@@ -63,10 +63,10 @@ def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
     '''
-    stopwords = {}
+    stopwords = []
     with open(filename, 'r') as filename:
         for line in filename:
-            stopwords[line.strip()] = 0
+            stopwords.append(line.strip())
     return stopwords
 
 def main():
