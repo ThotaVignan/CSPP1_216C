@@ -39,6 +39,7 @@ def format_data(data):
 def freq_count(data):
     '''Finding the frequency of each word in a file'''
     data1 = data.split(' ')
+    data1 = [w.strip() for w in data1]
     count = collections.Counter(data1)
     return count
 
