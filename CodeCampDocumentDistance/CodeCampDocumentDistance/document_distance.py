@@ -9,9 +9,10 @@ def similarity_calucalation(num, den1, den2):
 def denaminator_product(data):
     ''' adding the frequencies of eac word in a given file'''
     sum_of_pow_freq = 0
-    for freq in data:
-        sum_of_pow_freq += data[freq]**2
-    return math.sqrt(sum_of_pow_freq)
+    # sum([sum_of_pow_freq += data[freq]**2 for freq in data])
+    # for freq in data:
+    #     sum_of_pow_freq += data[freq]**2
+    return math.sqrt(sum([sum_of_pow_freq += data[freq]**2 for freq in data]))
 
 def numerator_product(data1, data2):
     '''Finding the product of common words in both files'''
