@@ -33,6 +33,7 @@ def remove_stopwords(data):
 def format_data(data):
     lower=data.lower()
     case = re.sub('[^a-z\ ]', '', lower)
+    print(case)
     return case
 
 def freq_count(b):
@@ -54,7 +55,6 @@ def similarity(dict1, dict2):
     numerator =  numerator_product(swords1,swords2)
     denaminator1 = denaminator_product(swords1)
     denaminator2 = denaminator_product(swords2)
-    # print(denaminator1,denaminator2)
     matching_similarity = similarity_calucalation(numerator,denaminator1,denaminator2)
     return matching_similarity
 
