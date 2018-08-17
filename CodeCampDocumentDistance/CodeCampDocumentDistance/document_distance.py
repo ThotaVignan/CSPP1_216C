@@ -21,7 +21,9 @@ def tokens(data):
     list1 = []
     for word in data:
         if word not in s_words:
-            list1.append(re.sub('[^a-z\ ]','',word).strip())
+            k = re.sub('[^a-z\ ]','',word).strip()
+            if len(k)>0:
+                list1.append(k)
     return list1
 
 
@@ -43,6 +45,7 @@ def similarity(dict1, dict2):
     dict2 = tokens(dict2)
     dictonary = freq(dictonary,dict1,0)
     dictonary = freq(dictonary,dict2,1)
+    # print(sorted(dictonary))
     result = calculations(dictonary)
     return result
 
