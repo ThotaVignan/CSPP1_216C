@@ -18,7 +18,7 @@ import re
         word2: [(doc_id, frequency),(doc_id, frequency),...],
         .
         .
-    }'''
+}'''
 def load_stopwords(filename):
     ''' loads stop words from a file and returns a dictionary '''
     stopwords = {}
