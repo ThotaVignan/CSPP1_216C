@@ -28,7 +28,7 @@ def word_list(text):
     '''
     stop_words = load_stopwords('stopwords.txt')
     text = text.lower().split(' ')
-    text = [re.sub('[^a-z]', '', word).strip() for words in text]
+    text = [re.sub('[^a-z]', '', word).strip() for word in text]
     text = [word for word in text if word not in stop_words and len(word) > 0]
     return text
 
