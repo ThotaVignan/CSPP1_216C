@@ -32,7 +32,6 @@ def build_search_index(docs):
                 dic[e_index] = [count, 1]
             else:
                 dic[e_index][1] += 1
-        # print(dic)
         for data in dic:
             if data not in dictonary:
                 dictonary[data] = [tuple(dic[data])]
