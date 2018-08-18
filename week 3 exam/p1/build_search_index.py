@@ -1,4 +1,3 @@
-import re
 '''
     Tiny Search Engine - Part 1 - Build a search index
 
@@ -20,7 +19,8 @@ import re
         .
         .
     }'''
-# helper function to load the stop words from a file
+'''helper function to load the stop words from a file'''
+import re
 def load_stopwords(filename):
     ''' loads stop words from a file and returns a dictionary '''
     stopwords = {}
@@ -50,7 +50,7 @@ def build_search_index(docs):
             if e_index not in dic:
                 dic[e_index] = [l_index, 1]
             else:
-                dic[e_index][1]+=1
+                dic[e_index][1] += 1
         # print(dic)
         for data in dic:
             if data not in dictonary:
@@ -73,8 +73,6 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    
-
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
