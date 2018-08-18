@@ -19,20 +19,15 @@ import re
         word2: [(doc_id, frequency),(doc_id, frequency),...],
         .
         .
-    }
-'''
-
+    }'''
 # helper function to load the stop words from a file
 def load_stopwords(filename):
-    '''
-        loads stop words from a file and returns a dictionary
-    '''
+    ''' loads stop words from a file and returns a dictionary '''
     stopwords = {}
     with open(filename, 'r') as f_stopwords:
         for line in f_stopwords:
             stopwords[line.strip()] = 0
     return stopwords
-
 
 def word_list(text):
     '''
@@ -42,21 +37,18 @@ def word_list(text):
     '''
     stop_words = load_stopwords('stopwords.txt')
     text = text.lower().split(' ')
-    # text = re.sub('[^a-z]', '', text)
     text = [re.sub('[^a-z]', '', word).strip() for word in text if re.sub('[^a-z]', '', word).strip() not in stop_words and len(word)>0]
     return text
 
 def build_search_index(docs):
-    '''
-        Process the docs step by step as given below
-    '''
+    ''' Process the docs step by step as given below '''
     dictonary = {}
-    docs = list(map(word_list,docs))
+    docs = list(map(word_list, docs))
     for l_index in range(len(docs)):
         dic = {}
         for e_index in docs[l_index]:
             if e_index not in dic:
-                dic[e_index] = [l_index,1]
+                dic[e_index] = [l_index, 1]
             else:
                 dic[e_index][1]+=1
         # print(dic)
@@ -103,7 +95,7 @@ def main():
     # iterate for n times
     lines = int(input())
     # iterate through N times and add documents to the list
-    for i in range(lines):
+    for _ in range(lines):
         documents.append(input())
         # i += 1
 
