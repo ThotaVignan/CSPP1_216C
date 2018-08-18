@@ -19,7 +19,6 @@ import re
         .
         .
     }'''
-'''helper function to load the stop words from a file'''
 def load_stopwords(filename):
     ''' loads stop words from a file and returns a dictionary '''
     stopwords = {}
@@ -36,14 +35,14 @@ def word_list(text):
     '''
     stop_words = load_stopwords('stopwords.txt')
     text = text.lower().split(' ')
-    text = [re.sub('[^a-z]', '', word).strip() for word in text if re.sub('[^a-z]', '', word).strip() not in stop_words and len(word)>0]
+    text = [re.sub('[^a-z]', '', word).strip() for word in text if re.sub('[^a-z]', '', word).strip() not in stop_words and len(word) > 0]
     return text
 
 def build_search_index(docs):
     ''' Process the docs step by step as given below '''
     dictonary = {}
     docs = list(map(word_list, docs))
-    for count,l_index in enumerate(docs,0):
+    for count, l_index in enumerate(docs, 0):
         dic = {}
         for e_index in l_index:
             if e_index not in dic:
