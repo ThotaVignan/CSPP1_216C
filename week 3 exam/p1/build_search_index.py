@@ -1,3 +1,4 @@
+'''program to searching base on index'''
 import re
 ''' Tiny Search Engine - Part 1 - Build a search index
 
@@ -10,15 +11,7 @@ import re
     The tuple has 2 items. The first item is the document ID.
     Document ID is represented by the list index.
     For example: the document ID of the third document in the list is 2
-    The second item of the tuple is the frequency of the word occuring in the document.
-
-    Here is the sample format of the dictionary.
-    {
-        word1: [(doc_id, frequency),(doc_id, frequency),...],
-        word2: [(doc_id, frequency),(doc_id, frequency),...],
-        .
-        .
-}'''
+    The second item of the tuple is the frequency of the word occuring in the document.'''
 def load_stopwords(filename):
     ''' loads stop words from a file and returns a dictionary '''
     stopwords = {}
@@ -35,7 +28,8 @@ def word_list(text):
     '''
     stop_words = load_stopwords('stopwords.txt')
     text = text.lower().split(' ')
-    text = [re.sub('[^a-z]', '', word).strip() for word in text if re.sub('[^a-z]', '', word).strip() not in stop_words and len(word) > 0]
+    text = [re.sub('[^a-z]', '', word).strip() for words in text]
+    text = [word for word in text if word not in stop_words and len(word) > 0]
     return text
 
 def build_search_index(docs):
