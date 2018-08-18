@@ -17,14 +17,10 @@ def calculations(dictonary):
 def tokens(data):
     data = data.lower()
     data = re.sub('[^a-z\ ]', '',data)
-    # print(data)
     s_words = load_stopwords("stopwords.txt")
     data = data.strip().split(" ")
-    # print(data)
     list1 = []
-    # print(s_words)
     for word in data:
-        # k = re.sub('[^a-z\ ]','',word)
         if word not in s_words and len(word)>0:
             list1.append(word)
     return list1

@@ -1,0 +1,94 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+0.0
+
+Your Output: 
+0.0
+
+----------------------------------------
+########## Testcase 1: Passed ##########
+Expected Output: 
+1.0
+
+Your Output: 
+1.0
+
+----------------------------------------
+########## Testcase 2: Passed ##########
+Expected Output: 
+0.4425012603813615
+
+Your Output: 
+0.4425012603813615
+
+----------------------------------------
+Result: 3/3 testcases passed.
+************* Module document_distance
+document_distance.py:10:11: C0326: Exactly one space required around assignment
+        num+=dictonary[d][0]*dictonary[d][1]
+           ^^ (bad-whitespace)
+document_distance.py:12:11: C0326: Exactly one space required around assignment
+        de1+=dictonary[d][0]**2
+           ^^ (bad-whitespace)
+document_distance.py:14:31: C0303: Trailing whitespace (trailing-whitespace)
+document_distance.py:14:11: C0326: Exactly one space required around assignment
+        de2+=dictonary[d][1]**2  
+           ^^ (bad-whitespace)
+document_distance.py:15:46: C0326: No space allowed before bracket
+    return num/(math.sqrt(de1)*math.sqrt(de2) )
+                                              ^ (bad-whitespace)
+document_distance.py:19:32: C0326: Exactly one space required after comma
+    data = re.sub('[^a-z\ ]', '',data)
+                                ^ (bad-whitespace)
+document_distance.py:28:44: C0326: Exactly one space required around comparison
+        if word not in s_words and len(word)>0:
+                                            ^ (bad-whitespace)
+document_distance.py:33:18: C0326: Exactly one space required after comma
+def freq(dictonary,data,index):
+                  ^ (bad-whitespace)
+document_distance.py:33:23: C0326: Exactly one space required after comma
+def freq(dictonary,data,index):
+                       ^ (bad-whitespace)
+document_distance.py:37:29: C0326: Exactly one space required after comma
+            dictonary[d] = [0,0]
+                             ^ (bad-whitespace)
+document_distance.py:38:31: C0326: Exactly one space required around assignment
+            dictonary[d][index]+=1
+                               ^^ (bad-whitespace)
+document_distance.py:40:31: C0326: Exactly one space required around assignment
+            dictonary[d][index]+=1
+                               ^^ (bad-whitespace)
+document_distance.py:50:30: C0326: Exactly one space required after comma
+    dictonary = freq(dictonary,dict1,0)
+                              ^ (bad-whitespace)
+document_distance.py:50:36: C0326: Exactly one space required after comma
+    dictonary = freq(dictonary,dict1,0)
+                                    ^ (bad-whitespace)
+document_distance.py:51:30: C0326: Exactly one space required after comma
+    dictonary = freq(dictonary,dict2,1)
+                              ^ (bad-whitespace)
+document_distance.py:51:36: C0326: Exactly one space required after comma
+    dictonary = freq(dictonary,dict2,1)
+                                    ^ (bad-whitespace)
+document_distance.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+document_distance.py:19:0: W1401: Anomalous backslash in string: '\ '. String constant might be missing an r prefix. (anomalous-backslash-in-string)
+document_distance.py:5:0: C0111: Missing function docstring (missing-docstring)
+document_distance.py:9:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)
+document_distance.py:11:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)
+document_distance.py:13:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)
+document_distance.py:17:0: C0111: Missing function docstring (missing-docstring)
+document_distance.py:28:35: C1801: Do not use `len(SEQUENCE)` to determine if a sequence is empty (len-as-condition)
+document_distance.py:33:0: C0111: Missing function docstring (missing-docstring)
+document_distance.py:35:8: C0103: Variable name "d" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 4.80/10 (previous run: 5.00/10, -0.20)
+
+
+[u'4.80']
+
+[master ebc6de7] " -> 3 of 3 passed. pylint: 4.80/10 "
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
