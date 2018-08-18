@@ -1,6 +1,5 @@
 import re
-'''
-    Tiny Search Engine - Part 1 - Build a search index
+''' Tiny Search Engine - Part 1 - Build a search index
 
     In this programming assingment you are given with some text documents as input.
     Complete the program below to build a search index. Don't worry, it is explained below.
@@ -44,11 +43,11 @@ def build_search_index(docs):
     ''' Process the docs step by step as given below '''
     dictonary = {}
     docs = list(map(word_list, docs))
-    for l_index in range(len(docs)):
+    for count,l_index in enumerate(docs,0):
         dic = {}
-        for e_index in docs[l_index]:
+        for e_index in l_index:
             if e_index not in dic:
-                dic[e_index] = [l_index, 1]
+                dic[e_index] = [count, 1]
             else:
                 dic[e_index][1] += 1
         # print(dic)
