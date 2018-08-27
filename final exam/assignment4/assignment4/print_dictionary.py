@@ -23,7 +23,7 @@ def print_dictionary(dictionary):
     '''dic'''
     list1 = sorted(dictionary)
     for i in list1:
-        print(i+' '+'-'+' '+str(dictionary[i]))
+        print(str(i)+' '+'-'+' '+str(dictionary[i]))
 def main():
     '''main'''
     dictionary = input()
