@@ -23,10 +23,10 @@ def print_dictionary(dictionary):
     '''dic'''
     list1 = sorted(dictionary)
     for i in list1:
-        print(str(i)+' '+'-'+' '+dictionary[i])
+        print(i+' '+'-'+' '+str(dictionary[i]))
 def main():
     '''main'''
-    dictionary = input()
+    dictionary = eval(input())
     print_dictionary(dictionary)
 if __name__ == '__main__':
     main()
