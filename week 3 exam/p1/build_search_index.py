@@ -17,14 +17,28 @@ def word_list(text):
     '''
     stop_words = load_stopwords('stopwords.txt')
     text = text.lower().split(' ')
+    # print(text,"splitted words")
+
     text = [re.sub('[^a-z]', '', word).strip() for word in text]
+    # print(text,"filtered words")
+
     text = [word for word in text if word not in stop_words and len(word) > 0]
+    # print(text,"processed words")
     return text
 
 def build_search_index(docs):
     ''' Process the docs step by step as given below '''
+    # initialize a search index (an empty dictionary)
+    # print(docs)
     dictonary = {}
     docs = list(map(word_list, docs))
+    print(docs)
+
+
+    # for l_index in range(len(docs)):
+
+    # for l_index in docs:
+
     for count, l_index in enumerate(docs, 0):
         dic = {}
         for e_index in l_index:
@@ -37,12 +51,10 @@ def build_search_index(docs):
                 dictonary[data] = [tuple(dic[data])]
             else:
                 dictonary[data].append(tuple(dic[data]))
-
     return dictonary
 
 
 
-    # initialize a search index (an empty dictionary)
 
     # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document

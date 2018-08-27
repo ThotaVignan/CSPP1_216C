@@ -7,8 +7,6 @@ def search(search_index, query):
         if data in search_index:
             for freq in search_index[data]:
                 search_result.add(freq[0])
-        # else:
-        #     return "set()"
     return search_result
 
 def process_queries(search_index, queries):
